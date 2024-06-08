@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Provador Virtual</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container" id="form-container">
+        <h1>Provador Virtual</h1>
+        <form action="https://api.web3forms.com/submit" method="POST" id="virtual-try-on-form">
+            <input type="hidden" name="access_key" value="dfa99873-7925-4845-9faf-20764b3b3973">
+
+            <label for="nome">Nome</label>
+            <input type="text" id="nome" name="nome" required>
+
+            <label for="idade">Idade</label>
+            <input type="number" id="idade" name="idade" required>
+
+            <label for="peso">Peso (kg)</label>
+            <input type="number" id="peso" name="peso" required>
+
+            <label for="altura">Altura (cm)</label>
+            <input type="number" id="altura" name="altura" required>
+
+            <label for="circunferencia-torax">Circunferência do Tórax (cm)</label>
+            <input type="number" id="circunferencia-torax" name="circunferencia-torax" required>
+
+            <label for="largura-ombros">Largura dos Ombros (cm)</label>
+            <input type="number" id="largura-ombros" name="largura-ombros" required>
+
+            <label for="comprimento-tronco">Comprimento do Tronco (cm)</label>
+            <input type="number" id="comprimento-tronco" name="comprimento-tronco" required>
+
+            <label for="estilo-camiseta">Estilo da Camiseta</label>
+            <select id="estilo-camiseta" name="estilo-camiseta" required>
+                <option value="justa">Justa</option>
+                <option value="regular">Regular</option>
+                <option value="folgada">Folgada</option>
+                <option value="oversized">Oversized</option>
+                <option value="unisex">Unisex</option>
+                <option value="streetwear">Streetwear</option>
+                <option value="masculina">Masculina</option>
+            </select>
+
+            <label for="tipo-tecido">Tipo de Tecido</label>
+            <select id="tipo-tecido" name="tipo-tecido" required>
+                <option value="algodao">Algodão</option>
+                <option value="poliester">Poliéster</option>
+                <option value="mistura">Mistura</option>
+            </select>
+
+            <label for="comprimento-camiseta">Comprimento da Camiseta</label>
+            <select id="comprimento-camiseta" name="comprimento-camiseta" required>
+                <option value="curto">Curto</option>
+                <option value="medio">Médio</option>
+                <option value="longo">Longo</option>
+            </select>
+
+            <label for="tipo-gola">Tipo de Gola</label>
+            <select id="tipo-gola" name="tipo-gola" required>
+                <option value="redonda">Redonda</option>
+                <option value="v">Em V</option>
+                <option value="alta">Gola Alta</option>
+            </select>
+
+            <label for="tipo-manga">Tipo de Manga</label>
+            <select id="tipo-manga" name="tipo-manga" required>
+                <option value="curta">Curta</option>
+                <option value="longa">Longa</option>
+                <option value="34">3/4</option>
+            </select>
+
+            <label for="cor-preferida">Cor Preferida</label>
+            <input type="text" id="cor-preferida" name="cor-preferida" required>
+
+            <button type="submit">Enviar</button>
+        </form>
+        <div id="result"></div> <!-- Elemento para exibir mensagens de resultado -->
+    </div>
+
+    <div class="container" id="thank-you-container" style="display:none;">
+        <div class="thank-you-content">
+            <img src="./images/check.jpg" alt="Visto Verde" class="checkmark-icon">
+            <h2>Obrigado!</h2>
+            <p>Sua solicitação foi recebida com sucesso.</p>
+            <button id="download-pdf" style="margin-top: 1rem;">Baixar ficha Técnica</button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.14/jspdf.plugin.autotable.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
